@@ -2,7 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/Employee/HomeScreen';
 import ProfileScreen from '../screens/Employee/ProfileScreen';
-import AttendanceScreen from '../screens/Employee/AttendanceScreen';
+import AttendanceScreen from '../screens/Employee/AttendanceScreen.js';
 import SalaryScreen from '../screens/Employee/SalaryScreen';
 import LeaveScreen from '../screens/Employee/LeaveScreen';
 import NotificationScreen from '../screens/Employee/NotificationScreen';

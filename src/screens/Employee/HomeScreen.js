@@ -3,11 +3,11 @@ import { View, Text, Button, FlatList } from 'react-native';
 
 export default function EmployeeHome() {
   const quickActions = [
-    '📋 Hồ sơ cá nhân',
-    '🕒 Chấm công',
-    '💰 Lương tháng này',
-    '🛌 Xin nghỉ phép',
-    '🔔 Thông báo',
+    ' Hồ sơ cá nhân',
+    ' Chấm công',
+    ' Lương tháng này',
+    ' Xin nghỉ phép',
+    ' Thông báo',
   ];
 
   return (
