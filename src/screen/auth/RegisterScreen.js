@@ -4,6 +4,9 @@ import { View, Text, TextInput, TouchableOpacity, Alert, StyleSheet } from 'reac
 export default function RegisterScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [role, setRole] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleRegister = () => {
     Alert.alert("Đăng ký thành công");
@@ -15,9 +18,14 @@ export default function RegisterScreen({ navigation }) {
       <Text style={styles.title}>Đăng ký</Text>
       <TextInput placeholder="Email" style={styles.input} onChangeText={setEmail} value={email} />
       <TextInput placeholder="Mật khẩu" secureTextEntry style={styles.input} onChangeText={setPassword} value={password} />
-      <TouchableOpacity style={styles.button} onPress={handleRegister}>
-        <Text style={styles.buttonText}>Đăng ký</Text>
+      <TextInput placeholder="Xác nhận mật khẩu" secureTextEntry style={styles.input} onChangeText={setConfirmPassword} value={confirmPassword} />
+      <TextInput placeholder="Chức vụ " secureTextEntry style={styles.input} onChangeText={setRole} value={role} />
+      <TouchableOpacity style={styles.button} onPress={handleRegister} disabled={isLoading}>
+        <Text style={styles.buttonText}>{isLoading ? 'Đang đăng ký...' : 'Đăng ký'}</Text>
       </TouchableOpacity>
+      {/* <TouchableOpacity style={styles.button} onPress={handleRegister}>
+        <Text style={styles.buttonText}>Đăng ký</Text>
+      </TouchableOpacity> */}
       <Text onPress={() => navigation.navigate('Login')} style={styles.link}>Đã có tài khoản? Đăng nhập</Text>
     </View>
   );

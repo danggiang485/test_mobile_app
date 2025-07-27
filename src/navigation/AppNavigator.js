@@ -5,7 +5,7 @@ import RegisterScreen from '../screen/auth/RegisterScreen';
 import AdminScreen from '../screen/main/AdminScreen';
 import ManagementScreen from '../screen/main/ManagementScreen';
 import UserScreen from '../screen/main/UserScreen';
-import IntroduceScreen from '../screen/main/IntroduceScreen';
+import BottomTabNavigator from './BottomTabNavigator';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,11 +19,10 @@ export default function AppNavigator() {
       />
       <Stack.Screen 
         name="Introduce" 
-        component={IntroduceScreen}
+        component={BottomTabNavigator}
         options={{ 
           headerShown: false,
-          // Prevent going back to login screen
-          gestureEnabled: false
+          gestureEnabled: false 
         }}
       />
       <Stack.Screen name="Register" component={RegisterScreen} />

@@ -8,7 +8,7 @@ export default function LoginScreen({ navigation }) {
 
   const handleLogin = () => {
     // Giả lập đăng nhập thành công với role tạm thời (có thể thay bằng API)
-    if (email === 'user@example.com' && password === '123456' && role === 'a') {
+    if (email === 'user@example.com' && password === '123456' ) {
       const userRole = 'employee'; // bạn có thể set thành 'admin', 'manager', etc.
       handleLoginByRole(userRole);
       navigation.replace('Introduce')
@@ -49,13 +49,13 @@ export default function LoginScreen({ navigation }) {
         onChangeText={setPassword}
         value={password}
       />
-      <TextInput
+      {/* <TextInput
         placeholder="chức vụ"
         secureTextEntry
         style={styles.input}
         onChangeText={setRole}
         value={role}
-      />
+      /> */}
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Đăng nhập</Text>
       </TouchableOpacity>
