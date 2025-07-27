@@ -1,21 +1,13 @@
-// App.js
-import React from 'react';
+import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import LoginScreen from './src/screens/Auth/LoginScreen';
-import RegisterScreen from './src/screens/Auth/RegisterScreen';
-import EmployeeHome from './src/screens/Employee/HomeScreen';
-
-const Stack = createNativeStackNavigator();
+import AppNavigator from './src/navigation/AppNavigator';
 
 export default function App() {
+  const [userRole, setUserRole] = useState(null);
+
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Login" component={LoginScreen} />
-        <Stack.Screen name="Register" component={RegisterScreen} />
-        <Stack.Screen name="EmployeeHome" component={EmployeeHome} />
-      </Stack.Navigator>
+      <AppNavigator userRole={userRole} setUserRole={setUserRole} />
     </NavigationContainer>
   );
 }
