@@ -8,7 +8,7 @@ export default function LoginScreen({ navigation }) {
 
   const handleLogin = () => {
     // Giả lập đăng nhập thành công với role tạm thời (có thể thay bằng API)
-    if (email === 'user@example.com' && password === '123456' ) {
+    if (email === 'ad' && password === '123' ) {
       const userRole = 'employee'; // bạn có thể set thành 'admin', 'manager', etc.
       handleLoginByRole(userRole);
       navigation.replace('Introduce')

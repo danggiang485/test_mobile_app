@@ -10,6 +10,7 @@ export default function ManagementScreen() {
       </View>
     </SafeAreaView>
   );
+  // List employee cung` phong` ban
 }
 
 const styles = StyleSheet.create({

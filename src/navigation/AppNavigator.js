@@ -5,6 +5,7 @@ import RegisterScreen from '../screen/auth/RegisterScreen';
 import AdminScreen from '../screen/main/AdminScreen';
 import ManagementScreen from '../screen/main/ManagementScreen';
 import UserScreen from '../screen/main/UserScreen';
+import UserDetailScreen from '../screen/main/UserDetailScreen';
 import BottomTabNavigator from './BottomTabNavigator';
 
 const Stack = createNativeStackNavigator();
@@ -29,6 +30,16 @@ export default function AppNavigator() {
       <Stack.Screen name="Admin" component={AdminScreen} />
       <Stack.Screen name="Manager" component={ManagementScreen} />
       <Stack.Screen name="User" component={UserScreen} />
+      <Stack.Screen 
+        name="UserDetail" 
+        component={UserDetailScreen}
+        options={{ 
+          title: 'Chi tiết nhân viên',
+          headerBackTitle: 'Quay lại'
+        }}
+      />
     </Stack.Navigator>
+
+    // button settings
   );
 }
