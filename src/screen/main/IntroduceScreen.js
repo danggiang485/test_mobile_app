@@ -45,23 +45,23 @@ const newsData = [
 ];
 
 const IntroduceScreen = () => {
-  const navigation = useNavigation();
+  // const navigation = useNavigation();
   const [searchText, setSearchText] = useState("");
 
-  const handleLogout = () => {
-    Alert.alert("Đăng xuất", "Bạn có chắc muốn đăng xuất?", [
-      {
-        text: "Hủy",
-        style: "cancel",
-      },
-      {
-        text: "Đồng ý",
-        onPress: () => {
-          navigation.replace("Login");
-        },
-      },
-    ]);
-  };
+  // const handleLogout = () => {
+  //   Alert.alert("Đăng xuất", "Bạn có chắc muốn đăng xuất?", [
+  //     {
+  //       text: "Hủy",
+  //       style: "cancel",
+  //     },
+  //     {
+  //       text: "Đồng ý",
+  //       onPress: () => {
+  //         navigation.replace("Login");
+  //       },
+  //     },
+  //   ]);
+  // };
 
   // 🔍 Lọc tin tức theo từ khoá nhập vào
   const filteredNews = newsData.filter((item) =>
@@ -83,9 +83,9 @@ const IntroduceScreen = () => {
         {/* 🔺 Header có nút đăng xuất */}
         <View style={styles.header}>
           <Text style={styles.headerTitle}>HRM APP</Text>
-          <TouchableOpacity onPress={handleLogout} style={styles.logoutButton}>
+          {/* <TouchableOpacity onPress={handleLogout} style={styles.logoutButton}>
             <Text style={styles.logoutText}>Đăng xuất</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
 
         {/* 🔍 Tìm kiếm */}
@@ -176,11 +176,11 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#333",
   },
-  logoutButton: {
-    backgroundColor: "#ff4444",
-    padding: 8,
-    borderRadius: 8,
-  },
+  // logoutButton: {
+  //   backgroundColor: "#ff4444",
+  //   padding: 8,
+  //   borderRadius: 8,
+  // },
   logoutText: {
     color: "white",
     fontWeight: "bold",

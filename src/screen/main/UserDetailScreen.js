@@ -6,7 +6,7 @@ export default function UserDetailScreen({ route, navigation }) {
   const { user } = route.params;
   const [isEditing, setIsEditing] = useState(false);
   const [editedUser, setEditedUser] = useState(user);
-  const baseUrl = "http://172.17.155.123:8080/users";
+  const baseUrl = "http://172.28.128.1:8080//employees/api";
 
   const handleUpdate = () => {
     setIsEditing(true);

@@ -4,11 +4,12 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 
 export default function ManagementScreen() {
+  
   const navigation = useNavigation();
   const [users, setUsers] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
-  const url = "http://172.17.155.123:8080/users";
-
+  const url = "http://172.28.128.1:8080//employees/api";
+  
   useEffect(() => {
     getUsers();
   }, []);
@@ -43,7 +44,16 @@ export default function ManagementScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Quản Lý Nhân Viên</Text>
+      <View style={styles.header}>
+        <Text style={styles.title}>Quản Lý Nhân Viên</Text>
+        <TouchableOpacity 
+          style={styles.addButton}
+          onPress={() => navigation.navigate('AddUser')}
+        >
+          <Text style={styles.addButtonText}>+</Text>
+        </TouchableOpacity>
+      </View>
+      
       <View style={styles.searchContainer}>
         <TextInput
           style={styles.searchInput}
@@ -118,5 +128,25 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ddd',
     fontSize: 16,
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 16,
+    marginVertical: 20,
+  },
+  addButton: {
+    backgroundColor: '#007AFF',
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  addButtonText: {
+    color: 'white',
+    fontSize: 24,
+    fontWeight: 'bold',
   },
 });
